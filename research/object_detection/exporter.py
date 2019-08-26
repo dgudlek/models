@@ -236,7 +236,7 @@ def add_output_tensor_nodes(postprocessed_tensors,
   if multiclass_scores is not None:
     outputs[detection_fields.detection_multiclass_scores] = tf.identity(
         multiclass_scores, name=detection_fields.detection_multiclass_scores)
-  if box_classifier_features is not None:
+  if False and box_classifier_features is not None:
     outputs[detection_fields.detection_features] = tf.identity(
         box_classifier_features,
         name=detection_fields.detection_features)
@@ -244,10 +244,10 @@ def add_output_tensor_nodes(postprocessed_tensors,
       classes, name=detection_fields.detection_classes)
   outputs[detection_fields.num_detections] = tf.identity(
       num_detections, name=detection_fields.num_detections)
-  if raw_boxes is not None:
+  if False and raw_boxes is not None:
     outputs[detection_fields.raw_detection_boxes] = tf.identity(
         raw_boxes, name=detection_fields.raw_detection_boxes)
-  if raw_scores is not None:
+  if False and raw_scores is not None:
     outputs[detection_fields.raw_detection_scores] = tf.identity(
         raw_scores, name=detection_fields.raw_detection_scores)
   if keypoints is not None:
